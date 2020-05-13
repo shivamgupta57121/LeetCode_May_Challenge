@@ -1,0 +1,30 @@
+// Code authored by SHIVAM GUPTA
+
+// HINT : Use Recursion 
+
+class Solution {
+public:
+    int sizeR;
+    int sizeC;
+    void Fill(vector<vector<int>>& ans, vector<vector<int>> image, int b[50][50], int val, int clr,int i, int j){
+        if(i<0 || i==sizeR || j<0 || j==sizeC) return;
+        if(val==image[i][j] && !b[i][j]){ 
+            ans[i][j]=clr;
+            b[i][j]=1;
+            Fill(ans,image,b,val,clr,i,j+1);
+            Fill(ans,image,b,val,clr,i+1,j);
+            Fill(ans,image,b,val,clr,i,j-1);
+            Fill(ans,image,b,val,clr,i-1,j);
+        }
+    }
+    vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int newColor) {
+        sizeR = image.size();
+        sizeC = image[0].size();
+        int b[50][50];
+        memset(b,0,sizeof(b));
+        vector<vector<int>> ans;
+        ans=image;
+        Fill(ans,image,b,image[sr][sc],newColor,sr,sc);
+        return ans;
+    }
+};
