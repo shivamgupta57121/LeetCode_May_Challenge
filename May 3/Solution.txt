@@ -1,0 +1,18 @@
+// Code authored by SHIVAM GUPTA
+
+// HINT : Use Map to store magzine characters and then check in Note . 
+// Time Complexity : O(m+n)
+
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        unordered_map<char,int> m;
+        
+        for(char r : magazine) m[r]++;
+        for(char r : ransomNote) m[r]--;
+        for(auto i:m) {
+            if(i.second <0) return false;
+        }
+        return true;
+    }
+};
