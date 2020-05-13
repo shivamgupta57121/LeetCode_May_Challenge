@@ -1,0 +1,16 @@
+// Code authored by SHIVAM GUPTA
+
+// HINT : Check Slope
+// Time Complexity : O(n)
+
+class Solution {
+public:
+    bool checkStraightLine(vector<vector<int>>& c) {
+        float m = (float)(c[1][1]-c[0][1])/(c[1][0]-c[0][0]);cout<<m;
+        for(int i =2;i<c.size();i++){
+            float m1 = (float)(c[i][1]-c[0][1])/(c[i][0]-c[0][0]);
+            if(m!=m1) return false;
+        }
+        return true;
+    }
+};
