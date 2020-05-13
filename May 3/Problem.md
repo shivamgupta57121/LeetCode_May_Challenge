@@ -8,15 +8,17 @@ Each letter in the magazine string can only be used once in your ransom note.
 
 Example 1:
 
-Input: ransomNote = "a", magazine = "b"
+Input: ransomNote = "a", magazine = "b"<br>
 Output: false
+
 Example 2:
 
-Input: ransomNote = "aa", magazine = "ab"
+Input: ransomNote = "aa", magazine = "ab"<br>
 Output: false
+
 Example 3:
 
-Input: ransomNote = "aa", magazine = "aab"
+Input: ransomNote = "aa", magazine = "aab"<br>
 Output: true
  
 
