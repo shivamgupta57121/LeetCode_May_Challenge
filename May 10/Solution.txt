@@ -1,6 +1,7 @@
 // Code authored by SHIVAM GUPTA
 
-/* HINT : Find the number of trust each person have. And if it person trust other then decrement one. Then if Trust is N-1 return the person*/
+/* HINT : Find the number of trust each person have. And if it person trust other then decrement one. 
+   Then if Trust is N-1 return the person  */
 // Time Complexity : O(M+N)
 
 class Solution {
