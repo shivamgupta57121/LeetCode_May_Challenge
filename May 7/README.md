@@ -10,18 +10,18 @@ Return true if and only if the nodes corresponding to the values x and y are cou
 
  
 
-Example 1:
-
+Example 1:<br>
+![](Example1%20Img.PNG)<br>
 Input: root = [1,2,3,4], x = 4, y = 3<br>
 Output: false
 
-Example 2:
-
+Example 2:<br>
+![](Example2%20Img.PNG)<br>
 Input: root = [1,2,3,null,4,null,5], x = 5, y = 4<br>
 Output: true
 
-Example 3:
-
+Example 3:<br>
+![](Example3%20Img.PNG)<br>
 Input: root = [1,2,3,null,4], x = 2, y = 3
 Output: false
  
