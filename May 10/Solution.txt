@@ -1,0 +1,17 @@
+// Code authored by SHIVAM GUPTA
+
+/* HINT : Find the number of trust each person have. And if it person trust other then decrement one. Then if Trust is N-1 return the person*/
+// Time Complexity : O(M+N)
+
+class Solution {
+public:
+    int findJudge(int N, vector<vector<int>>& trust) {
+        vector<int> trusts(N + 1);
+        for (auto t : trust){ 
+            trusts[t[0]]-- ; 
+            trusts[t[1]]++;
+        }
+        for (int i = 1; i <= N; ++i) if(trusts[i] == N-1) return i;
+        return -1;
+    }
+};
