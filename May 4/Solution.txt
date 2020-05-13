@@ -1,0 +1,19 @@
+// Code authored by SHIVAM GUPTA
+
+// HINT : Convert to binary number in string. Flip the bits. Then convert to decimal.
+// Time Complexity : O(log(n))
+
+class Solution {
+public:
+    int findComplement(int num) {
+        string s = "";
+        int rem;
+        while(num){
+            rem = num%2;
+            rem = !rem;
+            s = to_string(rem)+s;
+            num = num/2;
+        }
+        return stoi(s,0,2);
+    }
+};
