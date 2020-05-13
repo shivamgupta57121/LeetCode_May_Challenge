@@ -1,0 +1,17 @@
+// Code authored by SHIVAM GUPTA
+
+// HINT : Store the number of occurences. print if more than majority
+// Time Complexity : O(n)
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int req = floor(nums.size()/2);
+        unordered_map<int,int> m;
+        for(auto n:nums){
+            m[n]++;
+            if(m[n]>req) return n;
+        }
+        return 0;
+    }
+};
