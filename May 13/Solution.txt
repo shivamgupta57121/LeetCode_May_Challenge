@@ -1,0 +1,43 @@
+// Code authored by SHIVAM GUPTA
+
+// HINT : 
+// Compare 2 adjacent elements :
+//   If first element is greater then remove that element
+//   Else the first element is less than or equal to next then increment i
+// If more elements to be deleted after traversing whole then remove from end
+// Also remove leading zeros is any left 
+
+// Time Complexity : O(n)
+
+class Solution {
+public:
+    void removeLeadingZeros(string &num) {
+        while(num.length() > 0 && (num.compare(0, 1, "0") == 0)) { 
+            num.erase(num.begin()+0);
+        }
+    }
+    
+    void removeLeftOver(string &num, int k) {
+        int i;
+        i = num.length() - k;
+        num.erase(num.begin()+i, num.end());
+    }
+    
+    string removeKdigits(string num, int k) {
+      int i = 0;
+      while((i < num.length()-1) && (k>0)) {        
+          if(num[i] <= num[i+1]) i++;
+          else
+            {
+                num.erase(num.begin()+i);
+                k--;
+                if(i > 0) i--;
+            }
+      }
+      if(k!=0) removeLeftOver(num, k);
+      if(num.compare(0,1,"0") == 0) removeLeadingZeros(num);
+      if(num == "") return "0";
+        
+      return num; 
+    }
+};
